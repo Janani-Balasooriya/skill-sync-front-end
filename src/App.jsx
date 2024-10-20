@@ -1,9 +1,8 @@
-import Janani from './Janani/Janani.jsx';
+import Button from './Button/Button.jsx';
 function App() {
   return (
-    <main>
-     <Janani />
-     <h2 className='text-blue-500 font-lg font-bold'>Hey</h2>
+    <main className='p-4'>
+     <Button />
     </main>
   );
 }
