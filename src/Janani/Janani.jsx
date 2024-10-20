@@ -1,5 +1,3 @@
-import s from "./Janani.module.css";
-
 function Janani(){
 
     const n = 6;
@@ -11,7 +9,7 @@ function Janani(){
         name ="Kevin"
     }
 
-    return <h1 className={s.header}>{name}</h1>;
+    return <h1 className="text-red-600 text-4xl font-semibold">{name}</h1>;
 }
 
 export default Janani;
