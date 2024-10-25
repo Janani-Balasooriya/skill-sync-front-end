@@ -1,4 +1,4 @@
-import { Button } from "./components/ui/button.jsx";
+import { Button } from "@/components/ui/button.jsx";
 import {
   Accordion,
   AccordionContent,
@@ -30,7 +30,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-function App() {
+function HomePage() {
   return (
     <main className='p-4'>
       <Button>Click Me</Button>
@@ -114,4 +114,4 @@ function App() {
   );
 }
 
-export default App;
+export default HomePage;

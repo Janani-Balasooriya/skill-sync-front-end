@@ -1,14 +1,19 @@
-import App from './App.jsx'
 import './index.css'
 import React from 'react';
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import HomePage from './pages/home/home.page.jsx';
+import JobPage from './pages/job/job.page';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />
+    element: <HomePage />
   },
+  {
+    path: "/job",
+    element: <JobPage />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
