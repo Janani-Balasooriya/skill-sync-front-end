@@ -29,12 +29,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import Navigation from "@/components/shared/navigation";
 
 function HomePage() {
   return (
     <main className='p-4'>
-      <Navigation/>
       <Button>Click Me</Button>
       <Button variant="destructive">Click Me</Button>
 
