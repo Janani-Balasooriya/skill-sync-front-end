@@ -7,6 +7,7 @@ import JobPage from './pages/job/job.page';
 import RootLayout from './layouts/root.layout';
 import SignInPage from './pages/sign-in.page';
 import SignUpPage from './pages/sign-up.page';
+import MainLayout from './layouts/main.layout';
 
 
 const router = createBrowserRouter([
@@ -14,14 +15,18 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       {
-        path: "/",
-        element: <HomePage />
+        element: <MainLayout/>,
+        children: [
+          {
+            path: "/",
+            element: <HomePage />
+          },
+          {
+            path: "/job",
+            element: <JobPage />
+          }
+        ]
       },
-      {
-        path: "/job",
-        element: <JobPage />
-      },
-
       {
         path: "/sign-in",
         element: <SignInPage />
