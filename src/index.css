@@ -69,4 +69,9 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  .hero{
+    background: url("/assets/home/hero-3.png");
+    background-position: center;
+    background-size: cover;
+  }
 }
