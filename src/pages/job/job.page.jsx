@@ -1,7 +1,7 @@
 function JobPage(){
     return (
         <main className="p-4">
-            <h1 className="text-2xl">Job Page</h1>
+            <h1>Job Page</h1>
         </main>
     );
 }
