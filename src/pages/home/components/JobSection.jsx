@@ -22,6 +22,7 @@ function JobSection() {
                 {jobs.map((job) => {
                     return(
                         <JobCard
+                            key = {job._id}
                             title = {job.title}
                             _id = {job._id}
                             type = {job.type}
