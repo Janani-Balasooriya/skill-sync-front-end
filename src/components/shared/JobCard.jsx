@@ -2,22 +2,22 @@ import { Link } from "react-router-dom";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../ui/card";
 import { Briefcase, MapPin } from "lucide-react";
 
-function JobCard(){
+function JobCard(props){
     return (
-        <Link to={'/job/123'} className="block">
+        <Link to={`/job/${props._id}`} className="block">
                     <Card>
                         <CardHeader>
-                            <CardTitle> Cloud Solutions Engineer</CardTitle>
+                            <CardTitle> {props.title} </CardTitle>
                         </CardHeader>
                         <CardContent></CardContent>
                         <CardFooter className="gap-x-4">
                             <div className="flex items-center gap-x-2">
                                 <Briefcase/>
-                                <span>Full-time</span>
+                                <span>{props.type}</span>
                             </div>
                             <div className="flex items-center gap-x-2">
                                 <MapPin/>
-                                <span>Colombo</span>
+                                <span> {props.location} </span>
                             </div>
                         </CardFooter>
                     </Card>
