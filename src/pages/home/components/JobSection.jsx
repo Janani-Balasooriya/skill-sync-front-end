@@ -14,6 +14,12 @@ function JobSection() {
             type: "Full-time",
             location: "Colombo, Sri Lanka",
         },
+        {
+            _id: "def",
+            title: "Software Architect",
+            type: "Hybrid",
+            location: "Rajagiriya, Sri Lanka",
+        },
     ]
     return (
         <section className="py-8">
