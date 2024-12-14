@@ -44,14 +44,14 @@ function JobPage(){
             <form className="py-8 flex flex-col gap-y-8">
                 <div className="flex flex-col gap-y-4">
                     <Label>Full Name</Label>
-                    <Input />
+                    <Input required />
                 </div>
                 <div>
                     <div className="flex flex-col gap-y-4">
                         <Label>
                             Talk about the experience you have gained in Architecting Software?
                         </Label>
-                        <Textarea/>
+                        <Textarea required/>
                     </div>
                 </div>
                 <div>
@@ -59,7 +59,7 @@ function JobPage(){
                         <Label>
                             What are the technologies you're familiar with?
                         </Label>
-                        <Textarea/>
+                        <Textarea required/>
                     </div>
                 </div>
                 <div>
@@ -67,7 +67,7 @@ function JobPage(){
                         <Label>
                             Talk about the experience you got in software development
                         </Label>
-                        <Textarea/>
+                        <Textarea required/>
                     </div>
                 </div>
 
