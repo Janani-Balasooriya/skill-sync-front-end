@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Separator } from "@radix-ui/react-select";
 import { Briefcase, MapPin } from "lucide-react";
+import { useState } from "react";
 
 function JobPage(){
 
@@ -19,6 +20,20 @@ function JobPage(){
             "Discuss notable projects in your programming experience. What challenges did you face, and how did you apply your skills to them?"
         ],
     };
+
+    const [fullName, setFullName] = useState("");
+    const [a1, setA1] = useState("");
+    const [a2, setA2] = useState("");
+    const [a3, setA3] = useState("");
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(event);
+        console.log(fullName);
+        console.log(a1);
+        console.log(a2);
+        console.log(a3);
+    }
 
     return (
         <div>
@@ -41,17 +56,17 @@ function JobPage(){
 
             <Separator />
 
-            <form className="py-8 flex flex-col gap-y-8">
+            <form className="py-8 flex flex-col gap-y-8" onSubmit={handleSubmit}>
                 <div className="flex flex-col gap-y-4">
                     <Label>Full Name</Label>
-                    <Input required />
+                    <Input required onChange={(event) => setFullName(event.target.value)} />
                 </div>
                 <div>
                     <div className="flex flex-col gap-y-4">
                         <Label>
                             Talk about the experience you have gained in Architecting Software?
                         </Label>
-                        <Textarea required/>
+                        <Textarea required onChange={(event) => setA1(event.target.value)}/>
                     </div>
                 </div>
                 <div>
@@ -59,7 +74,7 @@ function JobPage(){
                         <Label>
                             What are the technologies you're familiar with?
                         </Label>
-                        <Textarea required/>
+                        <Textarea required onChange={(event) => setA2(event.target.value)}/>
                     </div>
                 </div>
                 <div>
@@ -67,7 +82,7 @@ function JobPage(){
                         <Label>
                             Talk about the experience you got in software development
                         </Label>
-                        <Textarea required/>
+                        <Textarea required onChange={(event) => setA3(event.target.value)}/>
                     </div>
                 </div>
 
