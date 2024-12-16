@@ -21,18 +21,26 @@ function JobPage(){
         ],
     };
 
-    const [fullName, setFullName] = useState("");
-    const [a1, setA1] = useState("");
-    const [a2, setA2] = useState("");
-    const [a3, setA3] = useState("");
+    // const [fullName, setFullName] = useState("");
+    // const [a1, setA1] = useState("");
+    // const [a2, setA2] = useState("");
+    // const [a3, setA3] = useState("");
+
+    const [formData, setFormData] = useState({
+        fullName: "",
+        a1: "",
+        a2: "",
+        a3: "",
+    })
 
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(event);
-        console.log(fullName);
-        console.log(a1);
-        console.log(a2);
-        console.log(a3);
+        // console.log(fullName);
+        // console.log(a1);
+        // console.log(a2);
+        // console.log(a3);
+        console.log(formData);
     }
 
     return (
@@ -59,14 +67,16 @@ function JobPage(){
             <form className="py-8 flex flex-col gap-y-8" onSubmit={handleSubmit}>
                 <div className="flex flex-col gap-y-4">
                     <Label>Full Name</Label>
-                    <Input required onChange={(event) => setFullName(event.target.value)} />
+                    {/* <Input required onChange={(event) => setFullName(event.target.value)} /> */}
+                    <Input required onChange={(event) => setFormData({...formData, fullName: event.target.value})} />
                 </div>
                 <div>
                     <div className="flex flex-col gap-y-4">
                         <Label>
                             Talk about the experience you have gained in Architecting Software?
                         </Label>
-                        <Textarea required onChange={(event) => setA1(event.target.value)}/>
+                        {/* <Textarea required onChange={(event) => setA1(event.target.value)}/> */}
+                        <Textarea required onChange={(event) => setFormData({...formData, a1: event.target.value})}/>
                     </div>
                 </div>
                 <div>
@@ -74,7 +84,7 @@ function JobPage(){
                         <Label>
                             What are the technologies you're familiar with?
                         </Label>
-                        <Textarea required onChange={(event) => setA2(event.target.value)}/>
+                        <Textarea required onChange={(event) => setFormData({...formData, a2: event.target.value})}/>
                     </div>
                 </div>
                 <div>
@@ -82,7 +92,8 @@ function JobPage(){
                         <Label>
                             Talk about the experience you got in software development
                         </Label>
-                        <Textarea required onChange={(event) => setA3(event.target.value)}/>
+                        {/* <Textarea required onChange={(event) => setA3(event.target.value)}/> */}
+                        <Textarea required onChange={(event) => setFormData({...formData, a3: event.target.value})}/>
                     </div>
                 </div>
 
