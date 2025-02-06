@@ -28,14 +28,14 @@ function JobPage(){
 
     const [formData, setFormData] = useState({
         fullName: "",
-        a1: "",
+        a1: "kk",
         a2: "",
         a3: "",
     })
 
     const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(event);
+        event.preventDefault(); //prevent from reloading page when submitting
+       // console.log(event);
         // console.log(fullName);
         // console.log(a1);
         // console.log(a2);
@@ -68,7 +68,7 @@ function JobPage(){
                 <div className="flex flex-col gap-y-4">
                     <Label>Full Name</Label>
                     {/* <Input required onChange={(event) => setFullName(event.target.value)} /> */}
-                    <Input required onChange={(event) => setFormData({...formData, fullName: event.target.value})} />
+                    <Input value={formData.fullName} required onChange={(event) => setFormData({...formData, fullName: event.target.value})} />
                 </div>
                 <div>
                     <div className="flex flex-col gap-y-4">
@@ -76,7 +76,7 @@ function JobPage(){
                             Talk about the experience you have gained in Architecting Software?
                         </Label>
                         {/* <Textarea required onChange={(event) => setA1(event.target.value)}/> */}
-                        <Textarea required onChange={(event) => setFormData({...formData, a1: event.target.value})}/>
+                        <Textarea required value={formData.a1} onChange={(event) => setFormData({...formData, a1: event.target.value})}/>
                     </div>
                 </div>
                 <div>
@@ -84,7 +84,7 @@ function JobPage(){
                         <Label>
                             What are the technologies you're familiar with?
                         </Label>
-                        <Textarea required onChange={(event) => setFormData({...formData, a2: event.target.value})}/>
+                        <Textarea required value={formData.a2} onChange={(event) => setFormData({...formData, a2: event.target.value})}/>
                     </div>
                 </div>
                 <div>
@@ -93,13 +93,28 @@ function JobPage(){
                             Talk about the experience you got in software development
                         </Label>
                         {/* <Textarea required onChange={(event) => setA3(event.target.value)}/> */}
-                        <Textarea required onChange={(event) => setFormData({...formData, a3: event.target.value})}/>
+                        <Textarea required value={formData.a2} onChange={(event) => setFormData({...formData, a3: event.target.value})}/>
                     </div>
                 </div>
 
-                <Button type="submit" className="mt-8 bg-card text-card-foreground w-fit">
-                    Submit
-                </Button>
+                <div className="flex gap-x-4 items-center">
+                    <Button type="submit" className="mt-8 bg-card text-card-foreground w-fit"> Submit</Button>
+                    <Button 
+                    type="button" 
+                    onClick={()=>
+                        setFormData({
+                            fullName: "",
+                            a1: "",
+                            a2: "",
+                            a3: "",
+                        })
+                    }
+                    className="mt-8 w-fit"
+                    variant="ghost">
+                    Cancel
+                    </Button>
+                </div>
+                
             </form>
         </div>
     );
