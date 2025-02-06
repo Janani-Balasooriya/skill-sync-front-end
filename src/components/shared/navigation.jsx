@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 function Navigation() {
     return (
-        <nav className="flex py-12 justify-between items-center">
+        <nav className="flex py-12 px-4 justify-between items-center">
             <div>
                 <Link to={"/"} className="text-4xl font-medium text-underlay-1">
                     SkillSync
